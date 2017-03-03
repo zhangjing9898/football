@@ -1,0 +1,368 @@
+html,
+body,
+div,
+canvas {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #CCCCCC;
+	font-family: "微软雅黑";
+}
+
+h1 {
+	text-align: center;
+	color: #FF6600;
+}
+
+.football-pitch {
+	position: relative;
+	width: 1000px;
+	height: 500px;
+	margin: 40px auto;
+	background: url(../img/turf.jpeg) repeat;
+	border: 4px solid #E1E1E1;
+	overflow: hidden;
+}
+
+.football-pitch .lines {
+	opacity: 0;
+	-webkit-transition: all 1.2s ease-in-out;
+	-moz-transition: all 1.2s ease-in-out;
+	-ms-transition: all 1.2s ease-in-out;
+	-o-transition: all 1.2s ease-in-out;
+	transition: all 1.2s ease-in-out;
+}
+
+.halfway-line {
+	position: absolute;
+	top: 0;
+	left: 498px;
+	width: 4px;
+	height: 500px;
+	background-color: #E1E1E1;
+}
+
+.center-circle {
+	position: absolute;
+	top: 196px;
+	left: 446px;
+	width: 100px;
+	height: 100px;
+	border: 4px solid #E1E1E1;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.center-spot {
+	position: absolute;
+	top: 245px;
+	left: 495px;
+	width: 10px;
+	height: 10px;
+	background-color: #FFFFFF;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.penalty-arc-container-left {
+	position: absolute;
+	left: 141px;
+	top: 196px;
+	width: 25px;
+	height: 100px;
+	overflow: hidden;
+}
+
+.penalty-arc-container-left .penalty-arc {
+	float: right;
+	width: 100px;
+	height: 100px;
+	border: 4px solid #E1E1E1;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.penalty-area-left {
+	position: absolute;
+	left: -4px;
+	top: 96px;
+	width: 140px;
+	height: 300px;
+	border: 4px solid #E1E1E1;
+}
+
+.penalty-spot-left {
+	position: absolute;
+	left: 91px;
+	top: 245px;
+	width: 10px;
+	height: 10px;
+	background-color: #FFFFFF;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.goal-area-left {
+	position: absolute;
+	left: -4px;
+	top: 196px;
+	width: 60px;
+	height: 100px;
+	border: 4px solid #E1E1E1;
+}
+
+.corner-area-left-top {
+	position: absolute;
+	left: -8px;
+	top: -8px;
+	width: 16px;
+	height: 16px;
+	border: 4px solid #E1E1E1;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.corner-area-left-bottom {
+	position: absolute;
+	left: -8px;
+	bottom: -8px;
+	width: 16px;
+	height: 16px;
+	border: 4px solid #E1E1E1;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.corner-area-right-bottom {
+	position: absolute;
+	right: -8px;
+	bottom: -8px;
+	width: 16px;
+	height: 16px;
+	border: 4px solid #E1E1E1;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.corner-area-right-top {
+	position: absolute;
+	right: -8px;
+	top: -8px;
+	width: 16px;
+	height: 16px;
+	border: 4px solid #E1E1E1;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.penalty-arc-container-right {
+	position: absolute;
+	right: 141px;
+	top: 196px;
+	width: 25px;
+	height: 100px;
+	overflow: hidden;
+}
+
+.penalty-arc {
+	float: left;
+	width: 100px;
+	height: 100px;
+	border: 4px solid #e1e1e1;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.penalty-area-right {
+	position: absolute;
+	right: -4px;
+	top: 96px;
+	width: 140px;
+	height: 300px;
+	border: 4px solid #e1e1e1;
+}
+
+.penalty-spot-right {
+	position: absolute;
+	right: 91px;
+	top: 245px;
+	width: 10px;
+	height: 10px;
+	background-color: #fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.goal-area-right {
+	position: absolute;
+	right: -4px;
+	top: 196px;
+	width: 60px;
+	height: 100px;
+	border: 4px solid #E1E1E1;
+}
+
+
+/*schedule*/
+
+.schedules div {
+	position: absolute;
+	text-align: center;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-o-border-radius: 6px;
+	border-radius: 6px;
+	top: 600px;
+	-webkit-transition: top 1.2s ease-in-out;
+	-moz-transition: top 1.2s ease-in-out;
+	-ms-transition: top 1.2s ease-in-out;
+	-o-transition: top 1.2s ease-in-out;
+	transition: top 1.2s ease-in-out;
+}
+.football-pitch.ready .lines {
+  opacity: 1;
+}
+.match-vs16{
+	width: 150px;
+	height: 60px;
+	line-height: 60px;
+	background-color:#F1C40F;
+	color: #F9F9F9;
+}
+.match-vs8{
+	width: 150px;
+	height: 60px;
+	line-height: 60px;
+	background-color: #F39C12;
+	color: #F9F9F9;
+}
+.match-vs4{
+	width: 120px;
+	height: 80px;
+	line-height: 80px;
+	background-color: #E67E22;
+	color: #F9F9F9;
+}
+.match-vs2{
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #D35400;
+	color: #F9F9F9;
+}
+.football-pitch.ready .schedules .match-49 {
+  left: 20px;
+  top: 40px;
+}
+.football-pitch.ready .schedules .match-50 {
+  left: 20px;
+  top: 140px;
+}
+.football-pitch.ready .schedules .match-53 {
+  left: 20px;
+  top: 300px;
+}
+.football-pitch.ready .schedules .match-54 {
+  left: 20px;
+  top: 400px;
+}
+.football-pitch.ready .schedules .match-51 {
+  right: 20px;
+  top: 40px;
+}
+.football-pitch.ready .schedules .match-52 {
+  right: 20px;
+  top: 140px;
+}
+.football-pitch.ready .schedules .match-55 {
+  right: 20px;
+  top: 300px;
+}
+.football-pitch.ready .schedules .match-56 {
+  right: 20px;
+  top: 400px;
+}
+.football-pitch.ready .schedules .match-57 {
+  left: 180px;
+  top: 80px;
+}
+.football-pitch.ready .schedules .match-58 {
+  left: 180px;
+  top: 340px;
+}
+.football-pitch.ready .schedules .match-59 {
+  right: 180px;
+  top: 80px;
+}
+.football-pitch.ready .schedules .match-60 {
+  right: 180px;
+  top: 340px;
+}
+.football-pitch.ready .schedules .match-61 {
+  left: 280px;
+  top: 200px;
+}
+.football-pitch.ready .schedules .match-62 {
+  right: 280px;
+  top: 200px;
+}
+.football-pitch.ready .schedules .match-63 {
+  left: 440px;
+  top: 260px;
+}
+.football-pitch.ready .schedules .match-64 {
+  right: 440px;
+  top: 200px;
+  background: #c0392b;
+}
+/*football-container*/
+.football-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1000px;
+  height: 500px;
+  z-index: 9999;
+}
+.football-container .ball {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.football-container canvas {
+  display: none;
+}
